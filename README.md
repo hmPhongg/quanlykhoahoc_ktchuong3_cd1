@@ -1,59 +1,116 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# He Thong Quan Ly Khoa Hoc (Course Management System)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+He thong quan ly khoa hoc truc tuyen duoc xay dung bang Laravel, cho phep quan ly khoa hoc, bai hoc va hoc vien dang ky.
 
-## About Laravel
+## Muc Luc
+- [Tinh Nang](#tinh-nang)
+- [Yeu Cau He Thong](#yeu-cau-he-thong)
+- [Cai Dat](#cai-dat)
+- [Cau Hinh](#cau-hinh)
+- [Chay Du An](#chay-du-an)
+- [Cau Truc Du An](#cau-truc-du-an)
+- [Screenshots](#screenshots)
+- [Tac Gia](#tac-gia)
+- [License](#license)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## TINH NANG
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Quan ly Khoa hoc
+- Them, sua, xoa khoa hoc (Soft Delete)
+- Upload anh khoa hoc
+- Trang thai khoa hoc (Draft/Published)
+- Tim kiem, loc, sap xep khoa hoc
+- Phan trang danh sach
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Quan ly Bai hoc
+- Them bai hoc vao khoa hoc
+- Quan ly noi dung, video URL
+- Sap xep thu tu bai hoc
 
-## Learning Laravel
+### Quan ly Hoc vien
+- Dang ky khoa hoc cho hoc vien
+- Tu dong tao/tim hoc vien theo email
+- Thong ke so luong hoc vien tung khoa
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Dashboard
+- Tong so khoa hoc, hoc vien, doanh thu
+- Khoa hoc nhieu hoc vien nhat
+- 5 khoa hoc moi nhat
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Tinh nang khac
+- Validation du lieu dau vao
+- Giao dien Bootstrap 5 responsive
+- Eager Loading toi uu query
+- Eloquent ORM voi Relationships
 
-## Laravel Sponsors
+## YEU CAU HE THONG
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- PHP: >= 8.0
+- Composer: Latest version
+- Database: MySQL/SQLite/PostgreSQL
+- Web Server: Apache/Nginx (hoac XAMPP/WAMP/Laragon)
+- Node.js & NPM: (Optional, cho bien dich assets)
 
-### Premium Partners
+## CAI DAT
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Buoc 1: Clone repository
+```bash
+git clone https://github.com/hmPhongg/quanlykhoahoc_ktchuong3_cd1.git
+cd quanlykhoahoc
+# Cai dat PHP dependencies
+composer install
+Buoc 2: Cai dat dependencies
+# Cai dat Node dependencies (neu co)
+npm install
+npm run build
 
-## Contributing
+Buoc 3: Cau hinh moi truong
+# Copy file cau hinh mau
+cp .env.example .env
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Tao application key
+php artisan key:generate
+Buoc 4: Cau hinh Database
+Su dung MySQL
+# Chinh sua file .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=quanlykhoahoc
+DB_USERNAME=root
+DB_PASSWORD=
 
-## Code of Conduct
+# Tao database
+mysql -u root -p
+CREATE DATABASE quanlykhoahoc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+EXIT;
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Chay migration
+php artisan migrate
 
-## Security Vulnerabilities
+Buoc 5: Tao Storage Link
+php artisan storage:link
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Buoc 6: (Optional) Seed du lieu mau
+php artisan db:seed
 
-## License
+CAU HINH
+Upload Images
+Dam bao thu muc storage/app/public co quyen ghi:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Windows (Git Bash)
+chmod -R 775 storage/
+
+# Linux/Mac
+chmod -R 775 storage/
+chown -R www-www-data storage/
+
+Cache Optimization (Production)
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+
+CHAY DU AN
+php artisan serve
+Truy cap: http://localhost:8000
+
